@@ -7,30 +7,75 @@
     flex-direction: column;
 }
 
-button{
+.btn{
+    color:lightblue;
+    text-decoration: underline;
   
-    background: none;
-    border: none;
-    text-decoration: underline; 
-    cursor: hand;
-    cursor: pointer; 
-    color: cadetblue;
 }
+
 .banner{
     display:flex;
     flex-direction: row;
     justify-content:space-evenly;
 }
-.nav-pills{
-        
-        align-items: center;
-    
- 
-    
-}
+
 .nav-item{
     border: solid 1px;
-    border-color: blue;
-    justify-items: stretch;
+    border-color: black;
+    
+    
+    
 }
+ .nav-item:hover{
+    background-color: darkgray;
+    
+ } 
+.nav-link{
+    color:black;
+}
+.nav-link:hover{
+    color:black;
+}
+.dropdown-menu{
+        width: 100%;
+        text-align: center;  
+        
+}
+
+.dropdown-item:hover{
+    background-color: darkgray;
+    
+}
+.body {
+    margin: 0em;
+}
+
+iframe {
+    border: 1px solid black;
+    width: 100%;
+}
+
+.output {
+    background: #eee;
+}
+.footer{
+    border-top:solid 1px;
   
+    
+}
+.link{
+    color: lightblue;
+    text-decoration:underline;
+    padding-right:20px;
+}
+.link:last-child{
+    border-left: solid lightblue 1px;
+    padding-left:20px;
+}
+.nav-link:onClick{
+    display: block;
+
+}
+iframe{
+    display:none;
+}
