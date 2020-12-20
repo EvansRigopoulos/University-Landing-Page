@@ -58,13 +58,11 @@ iframe {
 }
 
 .output {
-    background: #eee;
+    background: #eee; 
 }
-.footer{
-  /*  border-top:solid 1px;
-*/  
 
-}
+
+
 .link{
     color: lightblue;
     text-decoration:underline;
@@ -104,11 +102,25 @@ table, th, td {
     padding: 20px;
     align-items: center;
     color:rgb(0, 130, 247);
-   height:70px;
+    height:70px;
   }
   .names li img{
       width: 100px;
       height:150px;
   }
+  form{
+    width:1000px;  
+    padding-left:250px;
+  
+  }
+
+form button{
+    left:550px;
+    position: fixed;
+    top:160px;
+    color:black;
+    background-color:rgb(1, 135, 245);
+    
+}
  
  
