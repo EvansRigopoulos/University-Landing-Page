@@ -10,8 +10,9 @@
 .btn{
     color:lightblue;
     text-decoration: underline;
-  
+    padding-top:70px;
 }
+
 
 .banner{
     display:flex;
@@ -51,10 +52,8 @@
     width: auto;
 }
 
-iframe {
-    border: 1px solid black;
-    width:100%;
-    
+hr { 
+    border-top: 1px solid black;
 }
 
 .output {
@@ -111,13 +110,17 @@ table, th, td {
   form{
     width:1000px;  
     padding-left:250px;
-  
+    padding-bottom:50px;
   }
 
 form button{
-    left:550px;
-    position: fixed;
-    top:160px;
+    
+    
+    
+    position: relative;
+    top:10px;
+    left:170px;
+    
     color:black;
     background-color:rgb(1, 135, 245);
     
