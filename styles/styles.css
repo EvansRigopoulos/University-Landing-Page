@@ -1,6 +1,10 @@
 .logo{
     display: flex;
 }
+.logo img{
+    width:100px;
+    height:100px;
+}
 .description{
     display: flex;
     align-items: center;
@@ -75,6 +79,8 @@ hr {
     display: block;
 
 }
+
+
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -101,11 +107,12 @@ table, th, td {
     padding: 20px;
     align-items: center;
     color:rgb(0, 130, 247);
-    height:70px;
+    height:auto;
   }
   .names li img{
       width: 100px;
       height:150px;
+      padding:0 0 0 0;
   }
   form{
     width:1000px;  
