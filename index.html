@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
    
-  
+  <!-----Σε αυτό το κομμάτι δηλώνουμε τα στυλ της σελίδας μας τα οποιά είναι bootstrap 4.1.3 και css -->
     
     <link rel="stylesheet" href="styles/styles.css">
+
+    <!--------Εδώ είναι το κομμάτι της επικεφαλίδας του σάιτ με τον τίτλο το εικονίδιο,πληροφορίες και 
+    υπερσύνδεσμο για σύνδεση χρήστη-->
     <title>Μεταπτυχιακό Πρόγραμμα Σπουδών</title>
     <div class = "banner">
         <div class="logo">
-        <a class = "nav-link"  href="index.html" target="_self" ><img src="images\university.png"></a>
+          <!-----Εδώ είναι το εικονίδιο με αντίστοιχη περιγραφή εικόνας αν δεν ανοίγει σωστά και με Link-->
+        <a class = "nav-link"  href="index.html" target="_self" ><img src="images\university.png" alt="Πανεπιστήμιο..."></a>
         </div>
+        <!---Περιγραφή σελίδας-->
         <div class="description">
         <h3>ΗΛΕΚΤΡΟΝΙΚΗ ΓΡΑΜΜΑΤΕΙΑ</h3>
         <p>ΜΕΤΑΠΤΥΧΙΑΚΟΥ ΠΡΟΓΡΑΜΜΑΤΟΣ ΣΠΟΥΔΩΝ..........</p>
         <p>TMHMA..........</p>
         <P>ΠΑΝΕΠΙΣΤΗΜΙΟ...........</P>
         </div >
+        <!--Link σε μορφή button που μας οδηγεί στη σελίδα login-->
         <a class="btn btn-link" onClick href="login.html" target="_self" >
           Είσοδος</a>
         </div>
-    
+    <!-----Βασικό μενού πλοήγησης μέσα σε λίστα-->
     <ul class="nav  nav-fill">
       <li class="nav-item">
         <a class="nav-link "  href="index.html" target="_self" >Άρχική</a>
@@ -30,6 +36,7 @@
       <li class="nav-item"> 
         <a class="nav-link"  href="lessons.html" target="_self" >Μαθήματα</a>
       </li>
+      <!-----Εδώ σε αυτό το κομμάτι είναι το dropdown μας εμφανίζει επιλογές για διδάσκοντες και γραμματεία-->
       <li class="nav-item dropdown">
        
         <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Προσωπικό</a>
@@ -47,13 +54,14 @@
    
 </head>
 <body>
+  <!-----Κεντρικό τμήμα της σελίδας με τις ανακοινώσεις-->
    <h5>ΑΝΑΚΟΙΝΩΣΕΙΣ</h5>
     <div class="container">
         <div class="row">
         <div class="d-flex flex-row" >
             <div class="flex aling-self-start" >
               <!---Κάνω inline styling για το img ύψος και πλάτος 
-                λόγο ότι έχω και σε άλλες σελίδες container
+                λόγο του  ότι έχω και σε άλλες σελίδες container
                 για να μην επηρεάσω άλλα κομμάτια--->
             <img src="images/flip-chart1.png" style="width:100px;
             height:100px;" alt="Ανακοινώσεις1">
@@ -65,7 +73,7 @@
             </p>
           </div>
         </div>
-<!-- Εδώ δείχνουμε δεξιά τα σχόλια με το reverse   -->
+<!-- Εδώ δείχνουμε δεξιά τα σχόλια με το reverse ο τίτλος δηλαδή ξεκινάει από το δεξί τμήμα  -->
         <div class="d-flex flex-row-reverse" >
             <div class="flex aling-self-start" >
             <img src="images/flip-chart2.png" style="width:100px;
@@ -96,6 +104,7 @@
    
  
 </body>
+<!-----Και εδώ είναι το κομμάτι του υποσέλιδου το κάτω τμήμα του σάιτ-->
 <hr>
 <footer class="footer">
   <div class="container">
