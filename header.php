@@ -38,11 +38,11 @@
           <li><a href="modifyadmin.php"><i class="fa fa-books"></i>Τροποποίηση Στοιχείων</a></li>
           <li><a href="newuser.php"><i class="fa fa fa-books"></i>Εισαγωγή Νέου Χρήστη</a></li>
           <li>
-            <a href="modifylessons.php">Τροποποίηση Μαθημάτων</a>
+            <a href="#">Τροποποίηση Μαθημάτων</a>
             <ul class="drop">
               <li><a href="newlesson.php"><i class="fa far fa-user-cog"></i>Εισαγωγή μαθήματος</a></li>
-                <li><a href="modifylessons.php"><i class="fa far fa-chalkboard-teacher"></i>Τροποποίηση Μαθήματος</a></li>
-                <li><a href="showlessons.php"><i class="fa far fa-user-cog"></i>Μαθήματα</a></li>
+                
+                <li><a href="showlessons.php"><i class="fa far fa-user-cog"></i>Τροποποίηση/Διαγραφή Μαθήματος</a></li>
                 
             </ul>
         </li>

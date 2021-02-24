@@ -22,7 +22,7 @@ include("config.php");
 <body>
 <h5>Μαθήματα</h5>
     <?php
-        $sql="SELECT lessons.lesson_id,lessons.user_id,user.name,user.lastname,lessons.title,lessons.description,lessons.type,lessons.semester,lessons.ects FROM lessons  inner join user on lessons.user_id=user.user_id ";
+        $sql="SELECT lessons.lesson_id,lessons.user_id,user.name,user.lastname,lessons.title,lessons.description,lessons.type,lessons.semester,lessons.ects FROM lessons  inner join user on lessons.user_id=user.user_id  ORDER BY semester ASC";
         $data = $conn->query($sql);
         
     ?>
@@ -39,6 +39,9 @@ include("config.php");
             <th colspan="2">type</th>
             <th colspan="2">semester</th>
             <th colspan="3">Ects</th>
+            <th >Τροποποίηση</th>
+            <th >Διαγραφή</th>
+            
             </tr>
             </thead>
         <?php while($row = $data->fetch()): ?>
@@ -52,7 +55,20 @@ include("config.php");
             <td colspan="2"><?=$row['type']?></td>
             <td colspan="2"><?=$row['semester']?></td>
             <td colspan="3"><?=$row['ects']?></td>
-         
+            <td ><a  href="modifylessons.php?lesson_id=<?php echo $row["lesson_id"]; ?>">Τροποποίηση  </a></td>
+            <td ><a  href="" onclick="myFunction()">Διαγραφή  </a></td>
+            <script>
+function myFunction() {
+  
+  var r = confirm("Εϊστε σίγουροι?");
+  if (r == true) {
+    document.location="deletelessons.php?lesson_id=<?php echo $row["lesson_id"]; ?>";
+  } else {
+    document.location="showlessons.php";
+  }
+  
+}
+</script>
         </tr>
             </tbody>
         <?php endwhile ?>

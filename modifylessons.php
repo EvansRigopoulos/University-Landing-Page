@@ -13,10 +13,45 @@ while($row = $result -> fetch()){
     
     
 } 
-        
-        
-    
+$sql="SELECT lessons.lesson_id,lessons.user_id,user.name,user.lastname,lessons.title,lessons.description,lessons.type,lessons.semester,lessons.ects FROM lessons  inner join user on lessons.user_id=user.user_id WHERE lesson_id='".$_GET['lesson_id']."'";
+        $data = $conn->query($sql);
+      
+$result =$conn -> query($sql);       
+$row = $result -> fetch();   
+$lesson_id=$_GET['lesson_id'];
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+     
+    $title = $_POST['title'];
+    $ects = $_POST['ects'];
+    $user_id= $_POST['Professor'];
+    $type = $_POST['type'];
+    $semester= $_POST['semester'];
+    $description= $_POST['description'];
    
+if(!empty($_POST['title']) && !empty($_POST['ects']) && !empty($_POST['Professor'] ) && !empty($_POST['type'] ) && !empty($_POST['semester'])){
+  try{
+     
+    $sql= "UPDATE lessons SET user_id='$user_id' ,title= '$title',type='$type',semester='$semester',ects='$ects',description='$description' where lesson_id='$lesson_id'";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+       
+       echo   '<script language="javascript" type="text/javascript">
+       if (!alert ("Lesson modified succesfully")) {
+               document.location="showlessons.php";
+         
+       }
+       </script>';
+
+      
+   }catch(PDOException $e){
+       echo "query failed" . $e;
+   
+     }$stmt=null;
+
+}$conn=null;}
+   
+?>
 ?>
 
 
@@ -34,146 +69,60 @@ while($row = $result -> fetch()){
     <title>Μαθήματα</title>
 </head>
 <body>
-<h5>Μαθήματα</h5>
-    <?php
-        $sql="SELECT lessons.lesson_id,lessons.user_id,user.name,user.lastname,lessons.title,lessons.description,lessons.type,lessons.semester,lessons.ects FROM lessons  inner join user on lessons.user_id=user.user_id ";
-        $data = $conn->query($sql);
-        
-    ?>
+<div class="wrapper fadeInDown">
+        <div id="formContent">
 
-<form action="" method="POST">
-    <div>
-    <table class="show"  >
-    
-    <thead>
-            <tr class="text">
-            <th>lesson_id</th>
-            <th>Professor</th>
-            <th>title</th>
-            <th>Description</th>
-            <th>type</th>
-            <th>semester</th>
-            <th>Ects</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            </tr>
-            </thead>
-        <?php while($row = $data->fetch()): $lesson_id=$row['lesson_id']; ?>
-                
-            <tbody>
-        
-        <tr class="coloredtext" aria-rowspan="2">
-            
-            <td><?=$row['lesson_id']?></td>
-            <td><select  name="Professor" >
-            <option value="<?=$row['user_id']?>" selected><?=$row['name']." ".$row['lastname']?></option>
+   <form  name="form"action="" onsubmit="" method="post">
+       <label for="title">Τίτλος</label>
+       <div>
+       <input type="text" id="title" name="title" value="<?=$row['title'] ?>">
+       </div><br>
+       <div>
+        <label for="description">Περιγραφή</label><br>
+       <textarea name="description" rows="5" cols="30"><?=$row['description'] ?></textarea>
+       </div>
+       <label for="ects">Διδακτικές Μονάδες</label>
+       <div>
+       <select type="text" id="ects" name="ects" >
+           <option value="<?=$row['ects']?>"><?=$row['ects']?></option>
+           <option value="5">5</option>
+        </select>
+       </div><br>
+       <div>
+       <label for="type">Τύπος</label><br>
+       <select  name="type" id="=type"><br>
+       <option value="<?=$row['type']?>"><?=$row['type']?></option>
+        <option value="Υποχρεωτικό">Υποχρεωτικό</option>
+        <option value="Επιλογής">Επιλογής</option>
+       </select>
+       </div><br>
+       <div>
+       <label for="Professor">Διδάσκων Καθηγητής</label><br>
+      <select  name="Professor">
+          <option value="$row['user_id']"><?=$row['name']?>  <?=$row['lastname']?></option>
        <?php for($i = 0; $i < count($username); ++$i): ?>
     <option value="<?=$user_id[$i]?> " ><?=$username[$i]." ".$lastname[$i]?></option>
             <?php endfor ?>
     
-       </select></td>
-           
-            
-            <td ><input type="text" id="title" name="title" value="<?=$row['title']?>"></td>
-            <td><textarea name="description" rows="1" cols="10"><?=$row['description']?></textarea></td>
-            
-            
-           
-            <td><select  name="type" id="=type">
-            <option value="<?=$row['type']?>"><?=$row['type']?></option>
-        <option value="Υποχρεωτικό">Υποχρεωτικό</option>
-        <option value="Επιλογής">Επιλογής</option>
-       </select></td>
-           
-            <td><select  name="semester">
-                <option value="<?=$row['semester']?>" selected><?=$row['semester']?></option>
+       </select>
+       </div><br>
+        <div >
+        <label for="Semester">Επιλέξτε εξάμηνο</label><br>
+<select  name="semester">
+    <option value="<?=$row['semester']?>"><?=$row['semester']?></option>
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
   
-</select></td>
-<td><select  name="ects">
-                <option value="<?=$row['ects']?>" selected><?=$row['ects']?></option>
-  <option value="5">5</option>
-  
-  
-</select></td>
-
-<td></td>
-<td><button type="submit" name="modify" value="Update">Update</button></td>
-           <td><button type="submit" name="modify"  value="Delete" >Delete</button></td>
-            
-        </tr>
-        
-        
-        <?php endwhile?>
-            </tbody>
-       
-    
-    <?php
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-    switch($_REQUEST['modify']){
-        case "Update":
-            if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $title = $_POST['title'];
-        $ects = $_POST['ects'];
-        $user_id= $_POST['Professor'];
-        $type = $_POST['type'];
-        $semester= $_POST['semester'];
-        $description= $_POST['description'];
-        
-            try{
-               
-                 
-                  $sql= "UPDATE lessons SET user_id='$user_id' ,title= '$title',type='$type',semester='$semester',ects='$ects',description='$description' where lesson_id='$lesson_id '";
-
-                  $stmt = $conn->prepare($sql);
-
-                  
-                  $stmt->execute();
-                  echo $_POST['title'];
-                  echo $_POST['Professor']." ";
-                  echo $_POST['semester'];
-                  echo "   Update succesful";
-                 echo   '<script language="javascript" type="text/javascript">
-                 if (!alert ("Update succesful") ) {
-                         
-                   
-                 }
-                 </script>';
-         
-                
-             }catch(PDOException $e){
-                 echo "query failed" . $e;
-             
-               }$stmt=null;
-         
-         }$conn=null;
-        
-            break;
-    case "Delete" :
-        if($_SERVER["REQUEST_METHOD"] == "POST"){
-                    $sql="Delete from lessons where lesson_id = '$lesson_id ' ";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->execute();
-                    $stmt=null;
-                    $conn=null;
-                    echo   '<script language="javascript" type="text/javascript">
-                    if (!alert ("Update succesful")) {
-                           
-                      
-                    }
-                    </script>';
-                    break;
-        }
-        }
-    }
-    ?>
-    </table>
-   </div>
-    </form>
-    <hr>
+</select>
+</div>
+<hr>
+<div><button name="login" type="submit"  class="fadeIn first">Υποβολή</button><br><hr>
+        </div>
+   </form>
+        </div>
+    </div>
+<hr>
 </body>
 <?php
     include("footer.php"); 

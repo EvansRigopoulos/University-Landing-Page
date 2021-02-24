@@ -111,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     echo   '<script language="javascript" type="text/javascript">
 if (!alert ("Update succesfull")) {
     
-    history.go(-1);
+    document.location="memberbackoffice.php";
 }
 </script>';}
 
