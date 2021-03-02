@@ -4,7 +4,13 @@
 
 <?php
 session_start();
+if($_SESSION['role'] == "Administrator"){
 include("header.php");
+}elseif($_SESSION['role'] == "Student"){
+    include("studentheader.php"); 
+}elseif($_SESSION['role'] == "Professor"){
+    include("Professorheader.php");
+}
 include("config.php");
 
 // Initialize the session
@@ -61,7 +67,7 @@ $name =  $_SESSION['login_user'];
             <h5 style="padding-left:30px;" >Στοιχεία <?php echo $role ?></h5>
         </div>
     <table class="user" style="padding-left:30px;">
-    <form class="mod" action="" onsubmit="return validateForm()" method="POST">
+    <form class="form" action="" onsubmit="return validateForm()" method="POST">
     <tbody>
         <tr class="coloredtext">
             <td><b>Κωδικος Χρήστη</b><td><?php echo $user_id ?></td>
@@ -111,7 +117,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     echo   '<script language="javascript" type="text/javascript">
 if (!alert ("Update succesfull")) {
     
-    document.location="memberbackoffice.php";
+    document.location="modifyuser.php";
 }
 </script>';}
 

@@ -33,7 +33,7 @@
             "name": "Listen for XDebug",
             "type": "php",
             "request": "launch",
-            "port": 8002
+            "port": 8003
         },
         {
             "name": "Launch currently open script",

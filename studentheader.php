@@ -34,20 +34,12 @@
        
         <nav>
       <ul>
-          <li><a href="memberbackoffice.php" > <i class="fa far fa-university"></i>Αρχική</a></li>
+          <li><a href="memberstudent.php" > <i class="fa far fa-university"></i>Αρχική</a></li>
           <li><a href="modifyuser.php"><i class="fa fa-books"></i>Τροποποίηση Στοιχείων</a></li>
-          <li><a href="newuser.php"><i class="fa fa fa-books"></i>Εισαγωγή Νέου Χρήστη</a></li>
-          <li>
-            <a href="#">Τροποποίηση Μαθημάτων</a>
-            <ul class="drop">
-              <li><a href="newlesson.php"><i class="fa far fa-user-cog"></i>Εισαγωγή μαθήματος</a></li>
-                
-                <li><a href="showlessons.php"><i class="fa far fa-user-cog"></i>Τροποποίηση/Διαγραφή Μαθήματος</a></li>
-                
-            </ul>
-        </li>
-          <li><a href="showstudents.php">Προβολή Φοιτητών</a></li>
-          <li><a href="showusers.php">Προβολή Χρηστών</a></li>
+          <li><a href="studentstatistics.php?user_id=<?php echo $_SESSION['user_id'] ?>"><i class="fa fa fa-books"></i>Μαθήματα/Βαθμολογίες</a></li>
+          
+          <li><a href="studentrecords.php?user_id=<?php echo $_SESSION['user_id'] ?>">Εγγραφές</a></li>
+         
       </ul>
   </nav>
         

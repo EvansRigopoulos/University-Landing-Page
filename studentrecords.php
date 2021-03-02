@@ -1,0 +1,188 @@
+<?php
+session_start();
+include("studentheader.php");
+include("config.php");
+
+?>
+<style>
+.passed {
+    background-color: green;
+    
+}
+.notpassed{
+    background-color: red;
+}
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+</script>
+<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <h5>Μαθήματα</h5>
+    <?php
+        $user_id = $_GET['user_id'];
+        $sql1=" SELECT * FROM lessons LEFT JOIN  user on lessons.user_id=user.user_id LEFT JOIN records on records.lesson_id = lessons.lesson_id WHERE records.user_id=$user_id ";
+        $data1 = $conn->query($sql1);
+        
+        $sql2 = "SELECT * FROM semester where user_id=$user_id";
+        $data2 = $conn->query($sql2);
+        $row2= $data2->fetch();
+        $semester=$row2['semester'];
+
+        $sql3="SELECT count(record_id) FROM records INNER JOIN lessons on records.lesson_id=lessons.lesson_id WHERE grade>5 and records.user_id=$user_id  and type='Υποχρεωτικό' ";
+        $data3=$conn->query($sql3);
+       $row3=$data3->fetch();
+       $passedlessons=$row3['count(record_id)'];
+
+       $sql4="SELECT count(record_id) FROM records INNER JOIN lessons on records.lesson_id=lessons.lesson_id WHERE status='Εγγεγραμμένος/η' and records.user_id=$user_id   ";
+       $data4=$conn->query($sql4);
+      $row4=$data4->fetch();
+      $declaredlessons=$row4['count(record_id)'];
+
+      $sql5="SELECT count(record_id) FROM records INNER JOIN lessons on records.lesson_id=lessons.lesson_id WHERE grade>5 and records.user_id=$user_id  and type='Επιλογής' ";
+      $data5=$conn->query($sql5);
+     $row5=$data5->fetch();
+     $passedlessons2=$row5['count(record_id)'];
+
+
+     $sql6="SELECT sum(ects) FROM lessons Left JOIN records on lessons.lesson_id=records.lesson_id WHERE records.grade>5 and records.user_id=$user_id   ";
+     $data6=$conn->query($sql6);
+    $row6=$data6->fetch();
+    $ects=$row6['sum(ects)'];
+
+        
+    ?>
+
+
+
+    <table class="show" id="tableshow">
+        <thead>
+            <tr class="text">
+                <th>Εξάμηνο</th>
+                <th>Τίτλος Μαθήματος</th>
+                <th>Καθηγητής</th>
+                <th>Ects</th>
+                <th>Είδος</th>
+                <th>Βαθμός</th>
+                <th>Εγγραφή</th>
+
+            </tr>
+        </thead>
+
+
+
+
+        <tbody>
+            
+                <?php $i=0; while($row = $data1->fetch()): $i++; ?>
+                <tr id="row<?=$i?>">  
+                <td><?=$row['semester']?></td>
+                <td><?=$row['title']?></td>
+                <td><?=$row['name']?> <?=$row['lastname']?></td>
+                <td><?=$row['ects']?></td>
+                <td><?=$row['type']?></td>
+                <td><?=$row['grade']?></td>
+                <td colspan="3"><button type="button"  id="record<?=$i?>"></button>
+           
+            <script>    
+
+                
+               var row = document.getElementById("row<?=$i?>");
+                var record = document.getElementById("record<?=$i?>");
+                    var usersemester = "<?=$semester?>";
+                    var currentsemester="<?=$row['semester']?>"
+                    var status="<?=$row['status']?>";
+                    var grade = "<?=$row['grade']?>";
+                    var record_id="<?=$row['record_id']?>";
+                      
+                                  
+                  
+                     if( usersemester>=currentsemester && status==="Μη Εγγεγραμμενος/η" && grade==""){
+                        record.innerText='Eγγραφή';
+                        record.style.backgroundColor="green";
+                        $('#record<?=$i?>').click(function() {        
+                       //$("button").click(function(){
+                            console.log(record_id); 
+                                
+                            $(this).text($(this).text() ==="Κατάργηση εγγραφής"  ? 'Eγγραφή'   :"Κατάργηση εγγραφής"  );
+                           
+                                   if($(this).text() ==="Κατάργηση εγγραφής" ){
+                                      
+                                    $(this).css("background-color", "red");
+                                    
+                                    }else if($(this).text()==='Eγγραφή' ){
+                                        $(this).css("background-color", "green");
+                                    
+                                    }
+                               
+                        document.location="updaterecords.php?user_id=<?=$row['user_id']?>"+"&record_id=<?=$row['record_id']?>"+"&lesson_id=<?=$row['lesson_id']?>";
+                       
+                        //});
+                    });
+                     
+                                    
+        
+                               
+                    }else if (usersemester>=currentsemester && status === "Εγγεγραμμενος/η" ){
+                                    record.innerText='Κατάργηση εγγραφής';
+                                    record.style.backgroundColor="red";
+                                         
+                           
+                     
+                                 
+                    }else if(grade>5 || usersemester<currentsemester){
+                          
+                        record.style.display="none";
+                    }
+                    if(grade>5){
+                        row.style.backgroundColor="lightgreen";
+                    }
+                  
+                  
+                  
+                    
+                         
+                
+               
+                
+                </script>
+                 
+
+                 </td>
+            </tr>
+           
+            <?php endwhile?>
+         
+          
+<td colspan="2">Εξάμηνο:<?=$semester?><br>Βασικά Μαθήματα με προβιβάσιμο βαθμό:<?=$passedlessons?><br>Βασικά μαθήματα για πτυχίο:<?=8-$passedlessons?></td>
+<td colspan="2">Μαθήματα που έχουν δηλωθεί:<?=$declaredlessons?><br>Μαθήματα Επιλογής με προβιβάσιμο βαθμό:<?=$passedlessons2?><br>Μαθήματα επιλογής για πτυχίο:<?=1-$passedlessons2?></td>
+<td colspan="3"><br>Διδακτικές μονάδες:<?=$ects?><br>Διδακτικές μονάδες για πτυχίο:<?=45-$ects?></td>
+
+
+</tbody>
+
+
+
+    </table>
+    <hr>
+</body>
+<?php
+    include("footer.php"); 
+    ?>
+
+</html>
