@@ -130,7 +130,7 @@ include("config.php");
                                     
                                     }
                                
-                        document.location="updaterecords.php?user_id=<?=$row['user_id']?>"+"&record_id=<?=$row['record_id']?>"+"&lesson_id=<?=$row['lesson_id']?>";
+                        //document.location="updaterecords.php?user_id=<?=$row['user_id']?>"+"&record_id=<?=$row['record_id']?>"+"&lesson_id=<?=$row['lesson_id']?>";
                        
                         //});
                     });
@@ -141,7 +141,25 @@ include("config.php");
                     }else if (usersemester>=currentsemester && status === "Εγγεγραμμενος/η" ){
                                     record.innerText='Κατάργηση εγγραφής';
                                     record.style.backgroundColor="red";
-                                         
+                                    $('#record<?=$i?>').click(function() {        
+                       //$("button").click(function(){
+                            console.log(record_id); 
+                                
+                            $(this).text($(this).text() ==='Eγγραφή'  ?  "Κατάργηση εγγραφής"   :'Eγγραφή'  );
+                           
+                                   if($(this).text() ==="Κατάργηση εγγραφής" ){
+                                      
+                                    $(this).css("background-color", "red");
+                                    
+                                    }else if($(this).text()==='Eγγραφή' ){
+                                        $(this).css("background-color", "green");
+                                    
+                                    }
+                               
+                       // document.location="updaterecords.php?user_id=<?=$row['user_id']?>"+"&record_id=<?=$row['record_id']?>"+"&lesson_id=<?=$row['lesson_id']?>";
+                       
+                        //});
+                    });        
                            
                      
                                  
