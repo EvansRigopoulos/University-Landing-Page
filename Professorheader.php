@@ -17,26 +17,28 @@
     <div class = "banner">
         <div class="logo">
           <!-----Εδώ είναι το εικονίδιο με αντίστοιχη περιγραφή εικόνας αν δεν ανοίγει σωστά -->
-       <img src="images\university.png" alt="Πανεπιστήμιο...">
+       <img src="images\logo.ico" alt="Πανεπιστήμιο...">
         </div>
         <!---Περιγραφή σελίδας-->
         <div class="description">
-        <h3>ΗΛΕΚΤΡΟΝΙΚΗ ΓΡΑΜΜΑΤΕΙΑ</h3>
-        <p>ΜΕΤΑΠΤΥΧΙΑΚΟΥ ΠΡΟΓΡΑΜΜΑΤΟΣ ΣΠΟΥΔΩΝ..........</p>
-        <p>TMHMA..........</p>
-        <P>ΠΑΝΕΠΙΣΤΗΜΙΟ...........</P>
+        <p><strong>ΗΛΕΚΤΡΟΝΙΚΗ ΓΡΑΜΜΑΤΕΙΑ</strong>
+                    <br>ΜΕΤΑΠΤΥΧΙΑΚΟΥ ΠΡΟΓΡΑΜΜΑΤΟΣ ΣΠΟΥΔΩΝ
+                    <br>ΣΤΑ ΠΛΗΡΟΦΟΡΙΑΚΑ ΣΥΣΤΗΜΑΤΑ
+                    <br>ΤΜΗΜΑ ΠΛΗΡΟΦΟΡΙΚΗΣ
+                    <br>ΠΑΝΕΠΙΣΤΗΜΙΟ ΕΑΠ
+                    </p>
         </div >
         <!--Link σε μορφή button που μας οδηγεί στη σελίδα login-->
        
-        <a class="btn btn-link" onClick href="logout.php" target="_self"> <?php echo $_SESSION['email']."";?> Αποσύνδεση<i class=" fa-sign-in-alt"></i></a>
+        <a class="btn-link" onClick href="logout.php" target="_self"> <?php echo $_SESSION['email']." ";?> Αποσύνδεση <i class="fa fa-sign-out"></i></a>
          
         </div>
        
         <nav>
       <ul>
-          <li><a href="memberprofessor.php" > <i class="fa far fa-university"></i>Αρχική</a></li>
-          <li><a href="modifyuser.php"><i class="fa fa-books"></i>Τροποποίηση Στοιχείων</a></li>
-            <li><a href="registeredlessons.php">Λίστα Μαθημάτων</a></li>
+          <li><a href="memberprofessor.php" > <i class="fa far fa-university"></i> Αρχική</a></li>
+          <li><a href="modifyuser.php"><i class="fa fa-edit"> </i> Τροποποίηση Στοιχείων</a></li>
+            <li><a href="registeredlessons.php"><i class="fa fa-list"> </i> Λίστα Μαθημάτων</a></li>
             
           
       </ul>

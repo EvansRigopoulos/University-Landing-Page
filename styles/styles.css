@@ -1,6 +1,10 @@
+
+
 .logo{
     padding-top: 20px;
+    padding-right:50px;
     display: flex;
+    
 }
 .logo img{
     width:100px;
@@ -11,21 +15,23 @@
     align-items: center;
     flex-direction: column;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .btn-link{
-    color:gray;
-    text-decoration: none;
+    color:#007bff;
+    text-decoration:none;
     padding-top:70px;
-    
 }
-
+.footer{
+  background-color: lightgray;
+}
 
 .banner{
     display:flex;
     flex-direction: row;
     justify-content:space-evenly;
-    
+    background-color: lightgray;
 }
 .modify{
   color:gray;
@@ -105,11 +111,13 @@ nav>ul>li:hover .drop {
 body {
     margin: 0em;
     width: auto;
+    
    
 }
 
 hr { 
     border-top: 1px solid black;
+    margin:0px;
 }
 
 .output {
@@ -119,7 +127,7 @@ hr {
 
 
 .link{
-    color: rgb(173, 177, 179);
+    color:#007bff;;
     text-decoration:underline;
     padding-right:20px;
 }
@@ -189,15 +197,19 @@ form button{
     margin-left:30px;
 }
 
-
+b{
+  font-size: 15px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
 .user{
-    
+   
     display: table;
     border-collapse: separate;
     box-sizing: border-box;
     text-indent: initial;
     border-spacing:2px;
     border-color:gray;
+   
     width:auto;
     height: auto;
     border-top-width: 0px;
@@ -208,7 +220,7 @@ form button{
     -webkit-border-vertical-spacing: 4px;
   
     animation:fadeInLeft; 
-    animation-duration:  0.5s;;
+    animation-duration:  0.5s;
 }
 
 .text{
@@ -219,12 +231,14 @@ form button{
 }
 
 .user td{
-    
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+    font-size: 15px;
     border: none;
 }
 .user,tr,th,td{
   font-family: Open Sans !important;
-    font: 75% / 1.5 Arial, Helvetica, sans-serif;
+    font: 75% / 1.5  sans-serif;
     margin: 0;
     padding: 0;
     border: none;

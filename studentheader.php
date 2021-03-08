@@ -13,32 +13,35 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
+<link rel="stylesheet" href="styles/styles.css">
     <title>Μεταπτυχιακό Πρόγραμμα Σπουδών</title>
     <div class = "banner">
         <div class="logo">
           <!-----Εδώ είναι το εικονίδιο με αντίστοιχη περιγραφή εικόνας αν δεν ανοίγει σωστά -->
-       <img src="images\university.png" alt="Πανεπιστήμιο...">
+       <img src="images\logo.ico" alt="Πανεπιστήμιο...">
         </div>
         <!---Περιγραφή σελίδας-->
         <div class="description">
-        <h3>ΗΛΕΚΤΡΟΝΙΚΗ ΓΡΑΜΜΑΤΕΙΑ</h3>
-        <p>ΜΕΤΑΠΤΥΧΙΑΚΟΥ ΠΡΟΓΡΑΜΜΑΤΟΣ ΣΠΟΥΔΩΝ..........</p>
-        <p>TMHMA..........</p>
-        <P>ΠΑΝΕΠΙΣΤΗΜΙΟ...........</P>
+        <p><strong>ΗΛΕΚΤΡΟΝΙΚΗ ΓΡΑΜΜΑΤΕΙΑ</strong>
+                    <br>ΜΕΤΑΠΤΥΧΙΑΚΟΥ ΠΡΟΓΡΑΜΜΑΤΟΣ ΣΠΟΥΔΩΝ
+                    <br>ΣΤΑ ΠΛΗΡΟΦΟΡΙΑΚΑ ΣΥΣΤΗΜΑΤΑ
+                    <br>ΤΜΗΜΑ ΠΛΗΡΟΦΟΡΙΚΗΣ
+                    <br>ΠΑΝΕΠΙΣΤΗΜΙΟ ΕΑΠ
+                    </p>
         </div >
         <!--Link σε μορφή button που μας οδηγεί στη σελίδα login-->
        
-        <a class="btn btn-link" onClick href="logout.php" target="_self"> <?php echo $_SESSION['email']."";?> Αποσύνδεση<i class=" fa-sign-in-alt"></i></a>
+        <a class="btn-link" onClick href="logout.php" target="_self"> <?php echo $_SESSION['email']."";?> Αποσύνδεση <i class="fa fa-sign-out"></i></a>
          
         </div>
        
         <nav>
       <ul>
-          <li><a href="memberstudent.php" > <i class="fa far fa-university"></i>Αρχική</a></li>
-          <li><a href="modifyuser.php"><i class="fa fa-books"></i>Τροποποίηση Στοιχείων</a></li>
-          <li><a href="studentstatistics.php?user_id=<?php echo $_SESSION['user_id'] ?>"><i class="fa fa fa-books"></i>Μαθήματα/Βαθμολογίες</a></li>
+          <li><a href="memberstudent.php" > <i class="fa far fa-university"> </i> Αρχική</a></li>
+          <li><a href="modifyuser.php"><i class="fa fa-edit"> </i> Τροποποίηση Στοιχείων</a></li>
+          <li><a href="studentstatistics.php?user_id=<?php echo $_SESSION['user_id'] ?>"><i class="fa fa-book"> </i> Μαθήματα/Βαθμολογίες</a></li>
           
-          <li><a href="studentrecords.php?user_id=<?php echo $_SESSION['user_id'] ?>">Εγγραφές</a></li>
+          <li><a href="studentrecords.php?user_id=<?php echo $_SESSION['user_id'] ?>"><i class="fa fa-plus-square"> </i></i> Εγγραφές</a></li>
          
       </ul>
   </nav>
