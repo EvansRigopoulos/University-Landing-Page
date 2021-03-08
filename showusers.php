@@ -22,7 +22,7 @@ include("config.php");
 <body>
     <h5>Χρήστες</h5>
     <?php
-        $sql="SELECT * FROM user ORDER BY user_id ASC; ";
+        $sql="SELECT * FROM user WHERE role='Administrator' OR role='Professor' ORDER BY user_id ASC; ";
         $data = $conn->query($sql);
 
     ?>

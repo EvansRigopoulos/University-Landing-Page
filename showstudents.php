@@ -18,11 +18,12 @@ include("config.php");
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
-    <title>Document</title>
+    <title>Πρόοδος Φοιτητών</title>
 </head>
 <body>
+<h5>Προβολή Φoιτητών</h5>
 <?php
-        $sql="SELECT * FROM user  WHERE role = 'Student' ORDER BY user_id ASC; ";
+        $sql="SELECT * FROM user Inner Join semester on user.user_id=semester.user_id  WHERE role = 'Student' ORDER BY semester,lastname ASC; ";
         $data = $conn->query($sql);
 
     ?>
@@ -30,14 +31,13 @@ include("config.php");
     <thead>
             <tr class="text">
             <th>user_id</th>
-            <th>name</th>
-            <th>lastname</th>
+            <th>Όνομα</th>
+            <th>Επίθετο</th>
             <th>Email</th>
-            <th>mobile</th>
-            <th>role</th>
-            <th>address</th>
-            <th>birth_date</th>
-            <th>register_number</th>
+            <th>Εξάμηνο</th>
+            <th>Ημερομηνία Εγγραφής</th>
+            <th>Αρ.Μητρώου</th>
+            <th>Προβολή Καρτέλας Φοιτητή</th>
             </tr>
             </thead>
         <?php while($row = $data->fetch()): ?>
@@ -48,11 +48,10 @@ include("config.php");
             <td><?=$row['name']?></td>
             <td><?=$row['lastname']?></td>
             <td><?=$row['Email']?></td>
-            <td><?=$row['mobile']?></td>
-            <td><?=$row['role']?></td>
-            <td><?=$row['address']?></td>
-            <td><?=$row['birth_date']?></td>
+            <td><?=$row['semester']?></td>
+            <td><?=$row['register_date']?></td>
             <td><?=$row['register_number']?></td>
+            <td><a href="backofficestudentsstatistics.php?user_id=<?=$row['user_id']?>">Προβολή</a></td>
         </tr>
             </tbody>
         <?php endwhile ?>

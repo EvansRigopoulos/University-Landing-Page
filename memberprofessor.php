@@ -2,7 +2,7 @@
 
 <?php
 session_start();
-include("header.php");
+include("Professorheader.php");
 include("config.php");
 
 // Initialize the session

@@ -1,10 +1,14 @@
+
 <?php
 session_start();
-include("studentheader.php");
+include("header.php");
 include("config.php");
 
-?>
+// Initialize the session
+$name = $_SESSION['login_user'];
 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +29,17 @@ include("config.php");
 </head>
 
 <body>
-    <h5>Μαθήματα</h5>
+    <h5>Καρτέλα Φοιτητή</h5>
     <?php
         $user_id = $_GET['user_id'];
+
+        $sql="SELECT name,lastname FROM user WHERE user_id=$user_id";
+        $data=$conn->query($sql);
+        $row= $data->fetch();
+        $name=$row['name'];
+        $lastname=$row['lastname'];
+
+
         $sql1=" SELECT * FROM lessons LEFT JOIN  user on lessons.user_id=user.user_id LEFT JOIN records on records.lesson_id = lessons.lesson_id WHERE records.user_id=$user_id ";
         $data1 = $conn->query($sql1);
         
@@ -63,7 +75,9 @@ include("config.php");
 
 
     <table class="show" id="tableshow">
+    
         <thead>
+        <h5 style="text-align:center;">Φοιτητής <?php echo $row['name']." " .$row['lastname']  ?></h5>
             <tr class="text">
                 <th>Εξάμηνο</th>
                 <th>Τίτλος Μαθήματος</th>
@@ -81,15 +95,15 @@ include("config.php");
 
         <tbody>
             
-                <?php $i=0; while( $row = $data1->fetch()): $i++;  ?>
+                <?php $i=0; while( $row1 = $data1->fetch()): $i++;  ?>
                     <tr id="row<?=$i?>">
-                <td ><?=$row['semester']?></td>
-                <td><?=$row['title']?></td>
-                <td ><?=$row['name']?> <?=$row['lastname']?></td>
-                <td ><?=$row['ects']?></td>
-                <td ><?=$row['type']?></td>
-                <td><?=$row['grade']?></td>
-                <td id="td<?=$i?>"><?=$row['status']?></td>
+                <td ><?=$row1['semester']?></td>
+                <td><?=$row1['title']?></td>
+                <td ><?=$row1['name']?> <?=$row1['lastname']?></td>
+                <td ><?=$row1['ects']?></td>
+                <td ><?=$row1['type']?></td>
+                <td><?=$row1['grade']?></td>
+                <td id="td<?=$i?>"><?=$row1['status']?></td>
               
                    
             <script>    
@@ -98,10 +112,10 @@ include("config.php");
 var row = document.getElementById("row<?=$i?>");
 var td=document.getElementById("td<?=$i?>");
      var usersemester = "<?=$semester?>";
-     var currentsemester="<?=$row['semester']?>"
-     var status="<?=$row['status']?>";
-     var grade = "<?=$row['grade']?>";
-     var record_id="<?=$row['record_id']?>";
+     var currentsemester="<?=$row1['semester']?>"
+     var status="<?=$row1['status']?>";
+     var grade = "<?=$row1['grade']?>";
+     var record_id="<?=$row1['record_id']?>";
 
 
                     if(status==="Εγγεγραμμενος/η"){

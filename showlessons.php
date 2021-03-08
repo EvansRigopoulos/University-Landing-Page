@@ -32,31 +32,37 @@ include("config.php");
     <thead >
             <tr class="text">
             
-            <th>lesson_id</th>
-            <th>Professor</th>
-            <th>title</th>
-            <th>Description</th>
-            <th colspan="2">type</th>
-            <th colspan="2">semester</th>
-            <th colspan="3">Ects</th>
-            <th >Τροποποίηση</th>
+            <th>Εξάμηνο</th>
+            
+            <th>Τίτλος</th>
+            <th>Καθηγητής</th>
+            <th>περιγραφή</th>
+            <th>Είδος</th>
+           
+            <th >Ects</th>
+            <th colspan="5">Τροποποίηση</th>
+            
             <th >Διαγραφή</th>
             
             </tr>
             </thead>
-        <?php while($row = $data->fetch()): ?>
-            
+        
             <tbody>
+            <?php while($row = $data->fetch()): ?>
+            
         <tr class="coloredtext">
-            <td><?=$row['lesson_id']?></td>
+         
+        <td><?=$row['semester']?></td>
+        <td><?=$row['title']?></td>
             <td><?=$row['name']?> <?=$row['lastname']?></td>
-            <td><?=$row['title']?></td>
+            
             <td><?=$row['description']?></td>
-            <td colspan="2"><?=$row['type']?></td>
-            <td colspan="2"><?=$row['semester']?></td>
-            <td colspan="3"><?=$row['ects']?></td>
-            <td ><a  href="modifylessons.php?lesson_id=<?php echo $row["lesson_id"]; ?>">Τροποποίηση  </a></td>
-            <td ><a  href="" onclick="myFunction()">Διαγραφή  </a></td>
+            <td><?=$row['type']?></td>
+            
+            <td ><?=$row['ects']?></td>
+            <td colspan="5"><a  href="modifylessons.php?lesson_id=<?php echo $row["lesson_id"]; ?>">Τροποποίηση  </a></td>
+            
+            <td  ><a  href="" onclick="myFunction()">Διαγραφή  </a></td>
             <script>
 function myFunction() {
   

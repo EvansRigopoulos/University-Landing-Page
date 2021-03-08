@@ -36,8 +36,8 @@
       <ul>
           <li><a href="memberprofessor.php" > <i class="fa far fa-university"></i>Αρχική</a></li>
           <li><a href="modifyuser.php"><i class="fa fa-books"></i>Τροποποίηση Στοιχείων</a></li>
-            <li><a href="#">Εγγeγραμενοι φοιτητές</a></li>
-            <li><a href="#"><i class="fa fa fa-books"></i>Βαθμολόγηση</a></li>
+            <li><a href="registeredlessons.php">Λίστα Μαθημάτων</a></li>
+            
           
       </ul>
   </nav>

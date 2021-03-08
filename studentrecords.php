@@ -112,11 +112,11 @@ include("config.php");
                       
                                   
                   
-                     if( usersemester>=currentsemester && status==="Μη Εγγεγραμμενος/η" && grade==""){
+                     if( usersemester>=currentsemester && status==="Μη Εγγεγραμμενος/η" && (grade=="" || grade<5)){
                         record.innerText='Eγγραφή';
                         record.style.backgroundColor="green";
                         $('#record<?=$i?>').click(function() {        
-                       //$("button").click(function(){
+                      
                             console.log(record_id); 
                                 
                             $(this).text($(this).text() ==="Κατάργηση εγγραφής"  ? 'Eγγραφή'   :"Κατάργηση εγγραφής"  );
@@ -124,25 +124,25 @@ include("config.php");
                                    if($(this).text() ==="Κατάργηση εγγραφής" ){
                                       
                                     $(this).css("background-color", "red");
-                                    
+                                   
                                     }else if($(this).text()==='Eγγραφή' ){
                                         $(this).css("background-color", "green");
-                                    
+                                     
                                     }
                                
-                        //document.location="updaterecords.php?user_id=<?=$row['user_id']?>"+"&record_id=<?=$row['record_id']?>"+"&lesson_id=<?=$row['lesson_id']?>";
                        
-                        //});
+                                    document.location="updaterecords.php?user_id=<?=$row['user_id']?>"+"&record_id=<?=$row['record_id']?>"+"+&status="+"Εγγεγραμμενος/η";
+
                     });
                      
-                                    
+              
         
                                
                     }else if (usersemester>=currentsemester && status === "Εγγεγραμμενος/η" ){
                                     record.innerText='Κατάργηση εγγραφής';
                                     record.style.backgroundColor="red";
                                     $('#record<?=$i?>').click(function() {        
-                       //$("button").click(function(){
+                       
                             console.log(record_id); 
                                 
                             $(this).text($(this).text() ==='Eγγραφή'  ?  "Κατάργηση εγγραφής"   :'Eγγραφή'  );
@@ -150,17 +150,18 @@ include("config.php");
                                    if($(this).text() ==="Κατάργηση εγγραφής" ){
                                       
                                     $(this).css("background-color", "red");
+                                  
                                     
                                     }else if($(this).text()==='Eγγραφή' ){
                                         $(this).css("background-color", "green");
-                                    
+                                  
                                     }
                                
-                       // document.location="updaterecords.php?user_id=<?=$row['user_id']?>"+"&record_id=<?=$row['record_id']?>"+"&lesson_id=<?=$row['lesson_id']?>";
                        
-                        //});
+                                    document.location="updaterecords.php?user_id=<?=$row['user_id']?>"+"&record_id=<?=$row['record_id']?>"+"+&status="+"Μη Εγγεγραμμενος/η";
+      
                     });        
-                           
+   
                      
                                  
                     }else if(grade>5 || usersemester<currentsemester){
@@ -169,6 +170,8 @@ include("config.php");
                     }
                     if(grade>5){
                         row.style.backgroundColor="lightgreen";
+                    }if(usersemester<currentsemester){
+                        row.style.backgroundColor="grey"
                     }
                   
                   
