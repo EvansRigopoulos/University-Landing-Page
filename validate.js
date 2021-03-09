@@ -1,7 +1,7 @@
 
 
 
-// Defining a function to validate form 
+
 function validateForm() {
     // Retrieving the values of form elements 
     var email = document.forms["form"]["email"].value;
@@ -10,11 +10,18 @@ function validateForm() {
   
   
     var emailErr = passwordErr = true;
-    
-    // Validate name
+    if(email == "" && password == ""){
+        alert("Please enter your email and password");
+        var form=document.getElementById("form");
+        form.reset();
+         return false;
+    }
+    // Validate email
     if(email == "") {
-       alert( "Please enter your name");
+       alert( "Please enter your email");
+       var form=document.getElementById("form");
        form.reset();
+       history.go(-1);
         return false;
     } else {
         var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;                
@@ -28,6 +35,7 @@ function validateForm() {
 
     if(password == "") {
        alert("Please enter your password");
+       var form=document.getElementById("form");
        form.reset();
         return false;
     } else {
@@ -39,6 +47,7 @@ function validateForm() {
             passwordErr = false;
         }
     }
+   
     if(emailErr && passwordErr == true){
         var form=document.getElementById("form");
         form.reset();

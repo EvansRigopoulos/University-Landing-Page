@@ -126,7 +126,7 @@ include("config.php");
     <span class="text"> <a href="#">plh@eap.gr</a></span>
 </p>
     </div>
-</body><hr>
+</body>
 <?php
     include("footer.php"); 
     ?>

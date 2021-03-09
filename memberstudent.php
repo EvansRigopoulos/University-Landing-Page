@@ -53,7 +53,7 @@ $name = $_SESSION['login_user'];
 <body>
 
 <div class="page-header">
-        <h4>Hi, <p><?php echo $name." ".$lastname ?>
+        <h4>Γειά σας, <p><?php echo $name." ".$lastname ?>
 
     </p></h4>
 
@@ -96,7 +96,6 @@ $name = $_SESSION['login_user'];
     </div>
 </div>
 
-    <hr>
 
 </body>
 <?php

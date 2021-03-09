@@ -53,13 +53,13 @@ $name = $_SESSION['login_user'];
 <body>
 
 <div class="page-header">
-        <h4>Hi, <p><?php echo $name." ".$lastname ?>
+        <h4>Γειά σας, <p><?php echo $name." ".$lastname ?>
 
     </p></h4>
 
     <div >
         <div>
-            <h5 style="padding-left:150px;" ><i class="fa fa-laptop-code"></i> Στοιχεία <?php echo $role ?></h5>
+            <h5 style="padding-left:150px;" ><i class="fa fa-address-card"></i> Στοιχεία <?php echo $role ?></h5>
         </div>
     <table class="user" style="padding-left:150px;">
    
@@ -95,7 +95,7 @@ $name = $_SESSION['login_user'];
 </p>
     </div>
 </div>
-    <hr>
+  
 
 </body>
 <?php

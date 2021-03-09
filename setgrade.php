@@ -85,7 +85,7 @@ $data= $conn->query($sql);
 </tbody>
 </table>
 </div>
-    <div style="padding-left:30px;">
+    <div style="padding:150px 0 30px 0;">
     <p  style="font-size:15px;">
     <span class="text">e-mail Μητρώου:</span>
     <span class="text"> <a href="#">plh@eap.gr</a></span>

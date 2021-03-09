@@ -32,13 +32,12 @@ include("config.php");
     <thead>
             <tr class="text">
             <th>user_id</th>
-            <th>name</th>
-            <th>lastname</th>
+            <th>Όνομα</th>
+            <th>Επίθετο</th>
             <th>Email</th>
-            <th>mobile</th>
-            <th>role</th>
-            <th>address</th>
-            <th>birth_date</th>
+            <th>Τηλέφωνο</th>
+            <th>Ρόλος</th>
+            <th>Διεύθυνση</th>
             <th>register_number</th>
             </tr>
             </thead>
@@ -53,20 +52,19 @@ include("config.php");
             <td><?=$row['mobile']?></td>
             <td><?=$row['role']?></td>
             <td><?=$row['address']?></td>
-            <td><?=$row['birth_date']?></td>
-            <td><?=$row['register_number']?></td>
+           <td><?=$row['register_number']?></td>
         </tr>
             </tbody>
         <?php endwhile ?>
     </table>
     </div>
-    <div style="padding-left:30px;">
+    <div style="padding:100px 0 30px 0;">
     <p  style="font-size:15px;">
     <span class="text">e-mail Μητρώου:</span>
     <span class="text"> <a href="#">plh@eap.gr</a></span>
 </p>
     </div>
-    <hr>
+   
 </body>
 <?php
     include("footer.php"); 

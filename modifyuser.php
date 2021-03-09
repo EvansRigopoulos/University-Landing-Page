@@ -142,7 +142,7 @@ if (!alert ("Update succesfull")) {
 </p>
     </div>
 
-    <hr>
+  
 
 </body>
 <?php

@@ -43,7 +43,11 @@ if($_POST['email'] != "" || $_POST['password'] != ""){
   }
   
  
-}
+}else{ echo    '<script language="javascript" type="text/javascript">
+  if (!alert ("Τα στοιχεία πρόσβασης είναι λανθασμένα! Προσπαθήστε ξανά.")) {
+      history.go (-1);
+  }
+  </script>';}
 
 
 

@@ -4,17 +4,7 @@ include("studentheader.php");
 include("config.php");
 
 ?>
-<style>
-.passed {
-    background-color: green;
-    
-}
-.notpassed{
-    background-color: red;
-}
 
-
-</style>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -208,7 +198,7 @@ include("config.php");
     <span class="text"> <a href="#">plh@eap.gr</a></span>
 </p>
     </div>
-    <hr>
+    
 </body>
 <?php
     include("footer.php"); 

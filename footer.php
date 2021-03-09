@@ -34,8 +34,9 @@
 
 
   <div  class="row align-self-center">
-<h6><a href="oroi-xryshs.html" target="_self" class="link">Όροι χρήσης</a></h6>
-<h6><a href="poitiki.html" target="_self" class="link">Πολιτική απορρήτου</a></h6>
+  
+  <a href="terms.html" target="_self" class="link">Όροι χρήσης</a>
+      <a href="policy.html" target="_self" class="link">Πολιτική απορρήτου</a>
 </div>
 </div>
 

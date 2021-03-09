@@ -88,7 +88,7 @@ function myFunction() {
     <span class="text"> <a href="#">plh@eap.gr</a></span>
 </p>
     </div>
-    <hr>
+
 </body>
 <?php
     include("footer.php"); 

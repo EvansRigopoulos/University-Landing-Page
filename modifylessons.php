@@ -133,7 +133,7 @@ if(!empty($_POST['title']) && !empty($_POST['ects']) && !empty($_POST['Professor
     <span class="text"> <a href="#">plh@eap.gr</a></span>
 </p>
     </div>
-<hr>
+
 </body>
 <?php
     include("footer.php"); 

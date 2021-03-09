@@ -49,20 +49,20 @@
           
           <form name="form" onsubmit="return validateForm()" action="login.php" method="POST">
             <i class=" fa fa-user"></i>
-            <input type="text" id="email" class="fadeIn first" name="email" placeholder="Enter your email"><br>
+            <input type="text" id="email" class="fadeIn first" name="email" placeholder="Enter your email" required><br>
             <i class="fa fa-key"></i>
-            <input type="password" class="fadeIn second" id="password" placeholder='Enter your password'  name="password"  >
+            <input type="password" class="fadeIn second" id="password" placeholder='Enter your password'  name="password"  required>
             <div class="fadeIn third"> <input type="checkbox"  onclick="showpass()">Show Password </div>
             <script src="app.js"></script>
-            <button name="login" type="submit"  class="fadeIn fourth">Υποβολή</button>
-            <script src="validate.js"></script>
-          </form>
+           
+         
          
          
           <div id="formFooter">
-            <a class="underlineHover" href="#">Forgot Password?</a>
+            <button name="login"  class="underline-hover" type="submit"  class="fadeIn fourth">Υποβολή</button>
+            <script src="validate.js"></script>
           </div>
-         
+        </form>
         </div>
       </div>
       <script src="validate.js"></script>
@@ -89,8 +89,8 @@
       Εmail: <a href="mailto:pls@eap.gr">pls@eap.gr</a>
     </div>
      <div class="col-4 align-self-center">
-      <a href="oroi-xryshs.html" target="_self" class="link">Όροι χρήσης</a>
-      <a href="poitiki.html" target="_self" class="link">Πολιτική απορρήτου</a>
+      <a href="terms.html" target="_self" class="link">Όροι χρήσης</a>
+      <a href="policy.html" target="_self" class="link">Πολιτική απορρήτου</a>
     </div>
   </div>
 

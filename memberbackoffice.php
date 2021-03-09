@@ -38,7 +38,8 @@ $name = $_SESSION['login_user'];
 <head>
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="styles/styles.css">
   
@@ -50,13 +51,13 @@ $name = $_SESSION['login_user'];
 <body>
 
 <div class="page-header">
-        <h4>Hi, <p><?php echo $name." ".$lastname ?>
+        <h4>Γειά σας, <p><?php echo $name." ".$lastname ?>
 
     </p></h4>
 
     <div>
         <div>
-            <h5 style="padding-left:150px;" >Στοιχεία <?php echo $role ?></h5>
+            <h5 style="padding-left:150px;" ><i class="fa fa-paperclip"></i> Στοιχεία <?php echo $role ?></h5>
         </div>
     <table class="user" style="padding-left:150px;">
    

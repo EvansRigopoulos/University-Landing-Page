@@ -146,7 +146,13 @@ var td=document.getElementById("td<?=$i?>");
 
 
     </table>
-    <hr>
+    <div style="padding:100px 0 30px 30px;">
+    <p  style="font-size:15px;">
+    <span class="text">e-mail Μητρώου:</span>
+    <span class="text"> <a href="#">plh@eap.gr</a></span>
+</p>
+    </div>
+   
 </body>
 <?php
     include("footer.php"); 

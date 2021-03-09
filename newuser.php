@@ -35,10 +35,10 @@ include("config.php");
        
        <input type="text" id="lastname" name="lastname"><br>
        <label for="email">Email</label><br>
-       <input type="email" id="email" name="email">
+       <input type="email" id="email" name="email" required>
        <label for="">Κωδικός</label><br>
        <i class="fa fa-key"></i>
-       <input type="password" id="password" name="password"><i class="fa fa-eye" onclick="showpass()"></i><br></td>
+       <input type="password" id="password" name="password" required><i class="fa fa-eye" onclick="showpass()"></i><br></td>
             <script src="app.js"></script>
        <br>
        <label for="role">Ρόλος</label><br>

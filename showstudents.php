@@ -59,13 +59,13 @@ include("config.php");
         <?php endwhile ?>
     </table>
     </div>
-    <div style="padding-left:30px;">
+    <div style="padding:30px;">
     <p  style="font-size:15px;">
     <span class="text">e-mail Μητρώου:</span>
     <span class="text"> <a href="#">plh@eap.gr</a></span>
 </p>
     </div>
-</body><hr>
+</body>
 <?php
     include("footer.php"); 
     ?>
