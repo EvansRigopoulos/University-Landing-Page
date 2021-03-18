@@ -1,14 +1,14 @@
 <?php
-// Initialize the session
+
 session_start();
  
-// Unset all of the session variables
+//Επαναφέρουμε όλες τις μεταβλητές $_SESSION
 $_SESSION = array();
  
-// Destroy the session.
+//Καταστροφη του session
 session_destroy();
  
-// Redirect to login page
+//επιστροφη στην αρχικη σελιδα 
 header("location: index.html");
 exit;
 ?>

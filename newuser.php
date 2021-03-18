@@ -27,21 +27,29 @@ include("config.php");
     <div class="wrapper fadeInDown">
         <div id="formContent">
    <form  name="form"action="" onsubmit="return validateForm()" method="post">
-       <label for="name">Όνομα</label><br>
-       <i class=" fa fa-user"></i>
-       <input type="text" id="name" name="name">
-       <i class=" fa fa-user"></i>
-       <label for="">Επίθετο</label><br>
+   <i class=" fa fa-user"></i><h5>Εισαγωγή Νέου Χρήστη(Με αστερισκο * τα πεδία που είναι υποχρεωτικά)</h5>
+       <label for="name">Όνομα*</label><br>
        
-       <input type="text" id="lastname" name="lastname"><br>
-       <label for="email">Email</label><br>
-       <input type="email" id="email" name="email" required>
-       <label for="">Κωδικός</label><br>
+       <input type="text" id="name" name="name" required>
+      
+       <label for="">Επίθετο*</label><br>
+       
+       <input type="text" id="lastname" name="lastname" required><br>
+       <label for="email">Email*</label><br>
+       <input type="email" id="email" name="email" required><br>
        <i class="fa fa-key"></i>
-       <input type="password" id="password" name="password" required><i class="fa fa-eye" onclick="showpass()"></i><br></td>
+       <label for="password">Κωδικός*</label> <i class="fa fa-eye" onclick="showpass()"></i>
             <script src="app.js"></script>
        <br>
-       <label for="role">Ρόλος</label><br>
+      
+       <input type="password" id="password" name="password" required><br>
+       <label for="tel">Τηλέφωνο</label><br>
+       <input type="tel" id="tel" name="tel"><br>
+       <label for="address">Διεύθυνση</label><br>
+       <input type="text" id="address" name="address"><br>
+       <label for="birth_date">Ημερομηνία γέννησης</label><br>
+       <input type="date" id="birth_date" name="birth_date"><br>
+       <label for="role">Ρόλος*</label><br>
        <input type="radio" id="Administrator" name="role" value="Administrator"  >
         <label for="role">Administrator</label><br>
         <input type="radio" id="Student" name="role" value="Student" checked>
@@ -80,6 +88,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $lastname = $_POST['lastname'];
     $email= $_POST['email'];
     $password = $_POST['password'];
+    $tel=$_POST['tel'];
+    $address=$_POST['address'];
+    $birth_date=date('Y-m-d',strtotime($_POST['birth_date'])); 
     $role= $_POST['role'];
     $register_date = date("Y-m-d");
     $register_number = "usr".date("YmdHis");
@@ -87,9 +98,9 @@ if(!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['lastname'
   try{
       if($role === "Student"){
         $semester = $_POST['semester'];
-        $sql= "INSERT INTO user (name,lastname,Email,Password,role,register_date,register_number) VALUES(?,?,?,?,?,?,?) ";
+        $sql= "INSERT INTO user (name,lastname,Email,Password,mobile,address,birth_date,role,register_date,register_number) VALUES(?,?,?,?,?,?,?,?,?,?) ";
         $stmt = $conn->prepare($sql);
-        $stmt->execute(array($username,$lastname,$email,$password,$role,$register_date,$register_number));
+        $stmt->execute(array($username,$lastname,$email,$password,$tel,$address,$birth_date,$role,$register_date,$register_number));
         $sql1="SELECT user_id FROM  user where name = '$username' ";
         $result =$conn -> query($sql1);
         
@@ -111,10 +122,10 @@ if(!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['lastname'
         $stmt2=null;
         $result=null;
       }else{
-            echo $role;
-        $sql= "INSERT INTO user (name,lastname,Email,Password,role,register_date,register_number) VALUES(?,?,?,?,?,?,?) ";
+            
+        $sql= "INSERT INTO user (name,lastname,Email,Password,mobile,address,birth_date,role,register_date,register_number) VALUES(?,?,?,?,?,?,?,?,?,?) ";
         $stmt = $conn->prepare($sql);
-        $stmt->execute(array($username,$lastname,$email,$password,$role,$register_date,$register_number));
+        $stmt->execute(array($username,$lastname,$email,$password,$tel,$address,$birth_date,$role,$register_date,$register_number));
  
  
         echo   '<script language="javascript" type="text/javascript">

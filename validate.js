@@ -3,7 +3,9 @@
 
 
 function validateForm() {
-    // Retrieving the values of form elements 
+    //ελεγχος στις φορμες αν τα στοιχεια ειναι σωστα και εχουν τη σωστη μορφη
+    //σωστη μορφη email και pass με ελαχιστο 8 ψηφια 
+    //ο ελεγχος ειναι στο frontend κομματι 
     var email = document.forms["form"]["email"].value;
     var password = document.forms["form"]["password"].value;
   
@@ -16,7 +18,7 @@ function validateForm() {
         form.reset();
          return false;
     }
-    // Validate email
+    
     if(email == "") {
        alert( "Please enter your email");
        var form=document.getElementById("form");

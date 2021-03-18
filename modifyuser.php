@@ -62,7 +62,7 @@ $name =  $_SESSION['login_user'];
 <div class="page-header">
         <h4>Τροποποίηση στοιχείων</h4>
 
-    </p>
+   
 
     <div >
         
@@ -92,7 +92,7 @@ $name =  $_SESSION['login_user'];
             <td><b>Διεύθυνση</b><td><input type="text" id="address" name="address" value="<?php echo $address ?>"></td>
         </tr>
         <tr class="text">
-            <td><b>Ημερομηνία Γέννησης</b><td><input type="date" id="birth_date" name="birth_date" value="<?php echo date("j F Y", strtotime($birth_date)); ?>"></td>
+            <td><b>Ημερομηνία Γέννησης</b><td><input type="date" id="birth_date" name="birth_date" value="<?php echo $birth_date; ?>"></td>
         </tr>
       
     </tbody>
@@ -106,7 +106,7 @@ $name =  $_SESSION['login_user'];
   <?php 
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-        echo $_POST['birth_date'];
+       
     $birth_date =date('Y-m-d',strtotime($_POST['birth_date'])); 
   try{
    
@@ -135,11 +135,14 @@ if (!alert ("Update succesfull")) {
     </table>
     </div>
     <script src="validate.js"></script>
+    
+    
+    
     <div style="padding-left:30px;">
     <p  style="font-size:15px;">
     <span class="text">e-mail Μητρώου:</span>
     <span class="text"> <a href="#">plh@eap.gr</a></span>
-</p>
+    </p>
     </div>
 
   

@@ -1,7 +1,7 @@
 
 
 <?php
-
+//Συνδεση στη βαση δεδομενων
 $host = "localhost";
 $dbname = "rigopoulose_std108116";
 $username = "root";
@@ -15,5 +15,5 @@ try{
     echo"Connection failed :".$e->getMessage();
 }
   
-
+//το αρχειο αυτο το περιλαμβανουμε με include σε καθε αλλο αρχειο
 ?>

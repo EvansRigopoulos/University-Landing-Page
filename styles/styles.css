@@ -49,7 +49,7 @@ nav>ul {
 
 nav>ul>li {
  
-  /* "inline" if there is not drop down */
+  
   width:23%;
   text-align: center;
   color:black;
@@ -105,7 +105,7 @@ nav>ul>li:hover .drop {
   padding-left: 6%;
 }
 
-/* end of drop down */
+
 body {
   margin: 0em;
   width: auto;
@@ -407,11 +407,65 @@ input[type=text]:focus {
 input[type=text]:placeholder {
   color: #666565;
 }
+input[type=tel] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+input[type=tel]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #b5b7b8;
+}
 
+input[type=tel]:placeholder {
+  color: #cccccc;
+}
+input[type=date] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+input[type=date]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #b5b7b8;
+}
 
+input[type=date]:placeholder {
+  color: #cccccc;
+}
 /* ANIMATIONS */
 
-/* Simple CSS3 Fade-in-down Animation */
+
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -447,7 +501,7 @@ input[type=text]:placeholder {
   }
 }
 
-/* Simple CSS3 Fade-in Animation */
+/*Fade-in Animation */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -491,7 +545,7 @@ input[type=text]:placeholder {
   animation-delay: 1s;
 }
 
-/* Simple CSS3 Fade-in Animation */
+/* Fade-in Animation */
 .underlineHover:after {
   display: block;
   left: 0;
@@ -539,7 +593,7 @@ input[type=password] {
   border-radius: 5px 5px 5px 5px;
 }
 
-/* OTHERS */
+
 
 *:focus {
     outline: none;

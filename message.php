@@ -1,3 +1,4 @@
+
 <?php
 echo   '<script language="javascript" type="text/javascript">
 if (!alert ("Update succesfull")) {
@@ -5,5 +6,5 @@ if (!alert ("Update succesfull")) {
 }
 </script>';
 
-
+//μυνημα που εμφανιζουμε σε καθε update μαθηματων στοιχειων χρηστων κλπ
 ?>

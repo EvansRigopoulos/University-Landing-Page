@@ -32,7 +32,7 @@ $name = $_SESSION['login_user'];
     <h5>Καρτέλα Φοιτητή</h5>
     <?php
         $user_id = $_GET['user_id'];
-
+    //εδω επιστραφουμε στοιχεια απο τη βαση δεδομενων που αφορουν τα στατιστικα του φοιτητη
         $sql="SELECT name,lastname FROM user WHERE user_id=$user_id";
         $data=$conn->query($sql);
         $row= $data->fetch();
@@ -73,7 +73,7 @@ $name = $_SESSION['login_user'];
     ?>
 
 
-
+    <!-------------εμφανιση πινακα με τα στοιχεια φοιτητη----------->
     <table class="show" id="tableshow">
     
         <thead>
@@ -117,7 +117,7 @@ var td=document.getElementById("td<?=$i?>");
      var grade = "<?=$row1['grade']?>";
      var record_id="<?=$row1['record_id']?>";
 
-
+        //εδω αλλάζουμε τα χρωματα σε καθε γραμμη αναλογα το status καθε φοιτητη
                     if(status==="Εγγεγραμμενος/η"){
                       
                         td.style.color="darkgreen";
@@ -136,6 +136,7 @@ var td=document.getElementById("td<?=$i?>");
             </tr>
            
             <?php endwhile?>
+            <!----------------Εδω εμφανιζουμε τα στατιστικα στοιχεια του φοιτητη---------->
 <td colspan="2">Εξάμηνο:<?=$semester?><br>Βασικά Μαθήματα με προβιβάσιμο βαθμό:<?=$passedlessons?><br>Βασικά μαθήματα για πτυχίο:<?=8-$passedlessons?></td>
 <td colspan="2">Μαθήματα που έχουν δηλωθεί:<?=$declaredlessons?><br>Μαθήματα Επιλογής με προβιβάσιμο βαθμό:<?=$passedlessons2?><br>Μαθήματα επιλογής για πτυχίο:<?=1-$passedlessons2?></td>
 <td colspan="3"><br>Διδακτικές μονάδες:<?=$ects?><br>Διδακτικές μονάδες για πτυχίο:<?=45-$ects?></td>   

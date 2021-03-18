@@ -5,7 +5,7 @@ session_start();
 include("Professorheader.php");
 include("config.php");
 
-// Initialize the session
+// Αρχικη σελιδα καθηγητων
 $name = $_SESSION['login_user'];
 
 

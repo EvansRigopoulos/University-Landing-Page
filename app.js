@@ -1,3 +1,6 @@
+
+
+//ενα σκριπτακι για να μας εμφανιζεται το password 
 function showpass() {
     var x = document.getElementById("password");
 

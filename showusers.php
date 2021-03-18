@@ -58,7 +58,7 @@ include("config.php");
         <?php endwhile ?>
     </table>
     </div>
-    <div style="padding:100px 0 30px 0;">
+    <div style="padding:100px 0 30px 30px;">
     <p  style="font-size:15px;">
     <span class="text">e-mail Μητρώου:</span>
     <span class="text"> <a href="#">plh@eap.gr</a></span>

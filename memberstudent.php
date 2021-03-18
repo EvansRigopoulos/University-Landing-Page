@@ -5,7 +5,7 @@ session_start();
 include("studentheader.php");
 include("config.php");
 
-// Initialize the session
+// Αρχικη σελιδα φοιτητων
 $name = $_SESSION['login_user'];
 
 

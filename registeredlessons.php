@@ -4,7 +4,7 @@ session_start();
 include("Professorheader.php");
 include("config.php");
 
-// Initialize the session
+
 $name = $_SESSION['login_user'];
 $user_id = 	$_SESSION['user_id'];
 

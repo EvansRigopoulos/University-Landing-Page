@@ -5,7 +5,7 @@ session_start();
 include("header.php");
 include("config.php");
 
-// Initialize the session
+// Αρχικη σελιδα γραμματειας
 $name = $_SESSION['login_user'];
 
 
@@ -54,7 +54,7 @@ $name = $_SESSION['login_user'];
         <h4>Γειά σας, <p><?php echo $name." ".$lastname ?>
 
     </p></h4>
-
+<!-----------------εμφανιση στοιχειων-------->
     <div>
         <div>
             <h5 style="padding-left:150px;" ><i class="fa fa-paperclip"></i> Στοιχεία <?php echo $role ?></h5>

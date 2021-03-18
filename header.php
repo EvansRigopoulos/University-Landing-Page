@@ -1,3 +1,6 @@
+
+
+<!--------------Header για τις σελιδες γραμματειας γινεται include σε σελιδες της γραμματειας---->
 <!DOCTYPE html>
 <html lang="en">
 <head >
@@ -41,7 +44,7 @@
           <li><a href="modifyuser.php"><i class="fa fa-edit"> </i> Τροποποίηση Στοιχείων</a></li>
           <li><a href="newuser.php"><i class="fa fa-plus-square"> </i> Εισαγωγή Νέου Χρήστη</a></li>
           <li>
-            <a href="#"><i class="fa fa-book"> </i> Τροποποίηση Μαθημάτων</a>
+            <a href="#"><i class="fa fa-book"> </i> Μαθήματα</a>
             <ul class="drop">
               <li><a href="newlesson.php"><i class="fa fa-plus-square"> </i></i> Εισαγωγή μαθήματος</a></li>
                 
