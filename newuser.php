@@ -42,7 +42,7 @@ include("config.php");
             <script src="app.js"></script>
        <br>
       
-       <input type="password" id="password" name="password" required><br>
+       <input type="password" id="password" name="password" minlength=8 required><br>
        <label for="tel">Τηλέφωνο</label><br>
        <input type="tel" id="tel" name="tel"><br>
        <label for="address">Διεύθυνση</label><br>

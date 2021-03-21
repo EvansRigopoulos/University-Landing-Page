@@ -24,21 +24,23 @@ include("config.php");
 <body>
     <h5>Χρήστες</h5>
     <?php
-        $sql="SELECT * FROM user WHERE role='Administrator' OR role='Professor' ORDER BY user_id ASC; ";
+        $sql="SELECT * FROM user  ORDER BY user_id ASC; ";
         $data = $conn->query($sql);
 
     ?>
-    <table class="show" >
+    <table id="myTable" class="show" >
     <thead>
             <tr class="text">
             <th>user_id</th>
-            <th>Όνομα</th>
-            <th>Επίθετο</th>
-            <th>Email</th>
+            <th onclick="sortTable(1)" style="cursor: pointer;">Όνομα</th>
+            <th onclick="sortTable(2)" style="cursor: pointer;">Επίθετο</th>
+            <th onclick="sortTable(3)" style="cursor: pointer;">Email</th>
             <th>Τηλέφωνο</th>
-            <th>Ρόλος</th>
-            <th>Διεύθυνση</th>
-            <th>register_number</th>
+            <th onclick="sortTable(5)" style="cursor: pointer;">Ρόλος</th>
+            <th onclick="sortTable(6)" style="cursor: pointer;">Διεύθυνση</th>
+            <th onclick="sortTable(7)" style="cursor: pointer;">register_number</th>
+            <th>Επεξεργασία</th>
+            <th>Διαγραφή</th>
             </tr>
             </thead>
         <?php while($row = $data->fetch()): ?>
@@ -53,10 +55,77 @@ include("config.php");
             <td><?=$row['role']?></td>
             <td><?=$row['address']?></td>
            <td><?=$row['register_number']?></td>
+           <td><a href="updateuser.php?user_id=<?=$row['user_id']?>"><i class="fa fa-pencil"></i></a></td>
+           <td><button onclick="myFunction()"><i class="fa fa-trash"></i></button></td>
+           <script>
+function myFunction() {
+  
+  var r = confirm("Εϊστε σίγουροι?");
+  if (r == true) {
+      
+    document.location="deleteuser.php?user_id=<?=$row["user_id"];?>";
+  } else {
+     
+    document.location="showusers.php";
+  }
+  
+}
+</script>
         </tr>
             </tbody>
         <?php endwhile ?>
     </table>
+    <!---------ενα script για να διαλεγουμε εμφανιση με αλφαβητικη σειρά σε στήλες του πίνακα----->
+    <script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("myTable");
+  switching = true;
+  
+  dir = "asc"; 
+ 
+  while (switching) {
+    
+    switching = false;
+    rows = table.rows;
+    
+    for (i = 1; i < (rows.length - 1); i++) {
+      
+      shouldSwitch = false;
+     
+      x = rows[i].getElementsByTagName("td")[n];
+      y = rows[i + 1].getElementsByTagName("td")[n];
+    
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+         
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      
+      switchcount ++;      
+    } else {
+      
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
     </div>
     <div style="padding:100px 0 30px 30px;">
     <p  style="font-size:15px;">

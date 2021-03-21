@@ -29,6 +29,8 @@ function validateForm() {
         var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;                
         if(regex.test(email) === false) {
             alert( "Please enter a valid email");
+            form.reset();
+        return false;
         } else {
           
             emailErr = false;
@@ -44,6 +46,8 @@ function validateForm() {
         var regex = /^(?=.*[a-z])(?=.*[0-9]).{8,}$/;                
         if(regex.test(password) === false) {
            alert("Please enter a valid password ");
+           form.reset();
+        return false;
         } else {
            
             passwordErr = false;

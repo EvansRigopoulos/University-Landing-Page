@@ -52,7 +52,7 @@ if(!empty($_POST['title']) && !empty($_POST['ects']) && !empty($_POST['Professor
 }$conn=null;}
    
 ?>
-?>
+
 
 
 <!DOCTYPE html>

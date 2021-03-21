@@ -62,25 +62,28 @@ include("config.php");
             <td><?=$row['type']?></td>
             
             <td ><?=$row['ects']?></td>
-            <td colspan="5"><a  href="modifylessons.php?lesson_id=<?php echo $row["lesson_id"]; ?>">Τροποποίηση  </a></td>
+            <td colspan="5"><a  href="modifylessons.php?lesson_id=<?php echo $row["lesson_id"]; ?>"><i class="fa fa-pencil"></i> </a></td>
             
-            <td  ><a  href="" onclick="myFunction()">Διαγραφή  </a></td>
+            <td  ><button onclick="myFunction()"><i class="fa fa-trash"></i></button></td>
+      
+        </tr>
+            </tbody>
             <script>
 function myFunction() {
   
-  var r = confirm("Εϊστε σίγουροι?");
+  var r = confirm("Είστε σίγουροι?");
   if (r == true) {
-    document.location="deletelessons.php?lesson_id=<?php echo $row["lesson_id"]; ?>";
+    console.log("hi");
+    document.location="deletelessons.php?lesson_id=<?=$row["lesson_id"]; ?>";
   } else {
     document.location="showlessons.php";
   }
   
 }
 </script>
-        </tr>
-            </tbody>
         <?php endwhile ?>
     </table>
+  
     </div>
     <div style="padding-left:30px;">
     <p  style="font-size:15px;">
