@@ -54,7 +54,9 @@
         </li>
           <li><a href="showstudents.php"><i class="fa fa-eye"> </i> Προβολή Φοιτητών</a></li>
           <li><a href="showusers.php"><i class="fa fa-eye"> </i> Προβολή Χρηστών</a></li>
+          <li><a href="studentsXML.php"><i class="fa fa-list-ol"></i> Εξαγωγή λίστας XML φοιτητών</a></li>
       </ul>
+     
   </nav>
         
 </head>

@@ -1,0 +1,14 @@
+
+<!ELEMENT studentList (student*, highaverage*)> 
+<!ELEMENT student (name, lastname, lessons, avg,semester)> 
+<!ELEMENT name (#PCDATA)> 
+<!ELEMENT lastname (#PCDATA)> 
+<!ELEMENT lessons (#PCDATA)> 
+<!ELEMENT avg (#PCDATA)> 
+<!ELEMENT semester (#PCDATA)> 
+
+<!ELEMENT highaverage (Sname, Slastname, Slessons,Savg)> 
+<!ELEMENT Sname (#PCDATA)> 
+<!ELEMENT Slastname (#PCDATA)> 
+<!ELEMENT Slessons (#PCDATA)>
+<!ELEMENT Savg (#PCDATA)>

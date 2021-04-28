@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE studentList SYSTEM "studentList.dtd">
+<studentList>
+  <student>
+    <name>Άγγελος</name>
+    <lastname>Αγγέλου</lastname>
+    <lessons>2</lessons>
+    <avg>6.5000</avg>
+    <semester>2</semester>
+  </student>
+  <student>
+    <name>Γιώργος </name>
+    <lastname>Γεωργίου</lastname>
+    <lessons>3</lessons>
+    <avg>6.3333</avg>
+    <semester>2</semester>
+  </student>
+  <student>
+    <name>Ευάγγελος</name>
+    <lastname>Ρηγόπουλος</lastname>
+    <lessons>3</lessons>
+    <avg>8.6667</avg>
+    <semester>2</semester>
+  </student>
+  <highaverage>
+    <Sname>Ευάγγελος</Sname>
+    <Slastname>Ρηγόπουλος</Slastname>
+    <Slessons>3</Slessons>
+    <Savg>8.6667</Savg>
+  </highaverage>
+  <highaverage>
+    <Sname>Άγγελος</Sname>
+    <Slastname>Αγγέλου</Slastname>
+    <Slessons>2</Slessons>
+    <Savg>6.5000</Savg>
+  </highaverage>
+</studentList>
