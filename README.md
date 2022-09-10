@@ -33,6 +33,6 @@ Based on the lessons that a student has completed succesfully the semester which
 
 Page for registing new lessons for a student
 
-Page for total lessons completed and degrees
+Result Page for total lessons completed and degrees
 
-
+User has the ability to download  an xml file with the results of his lessons completed and degrees
