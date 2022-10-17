@@ -33,8 +33,8 @@ Page for registing new lessons for a student
 
 Result Page for total lessons completed and degrees
 
-User has the ability to download an xml file with the results of his lessons completed and degrees
 
-- You can connect to the page as an admin using
+
+- You can connect to the page:https://plh23-php-lessons.herokuapp.com/ as an admin using
   user:admin@eap.gr
   pass:admin1234
