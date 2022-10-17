@@ -8,8 +8,10 @@ $username = "b650b0789f39fd";
 $password = "300f1dea";
 
 try{
-     $conn = new PDO("mysql:host=$host;dbname=$dbname",$username,$password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+     $conn = new PDO("mysql:host=$host;dbname=$dbname",$username,$password,array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+   
   
 }catch (PDOException $e){
     echo"Connection failed :".$e->getMessage();
