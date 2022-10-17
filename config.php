@@ -2,10 +2,10 @@
 
 <?php
 //Συνδεση στη βαση δεδομενων
-$host = "localhost";
-$dbname = "rigopoulose_std108116";
-$username = "root";
-$password = "";
+$host = "eu-cdbr-west-03.cleardb.net";
+$dbname = "heroku_a30cf02546716bf";
+$username = "b650b0789f39fd";
+$password = "300f1dea";
 
 try{
      $conn = new PDO("mysql:host=$host;dbname=$dbname",$username,$password);
