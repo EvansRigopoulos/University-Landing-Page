@@ -4,26 +4,24 @@ A full stack project for creating a university backoffice page with a simple log
 
 Tech used PHP , HTML , Bootstrap , Javascript ,XAAMP server and a relational SQL DB
 
+#Users
 
+Can be separetad into 3 categories:
 
-#Users 
+1)Backoffice(admin)
 
-Can be separetad into 3 categories: 
+2)Student
 
-  1)Backoffice(admin)
-  
-  2)Student
-  
-  3)Professor
+3)Professor
 Based on the user role after login the user lands in the appropriate page.
 
 #Functions
 
-Creation of a new  role specific user
+Creation of a new role specific user
 
 Creation of new lessons
 
-Seperation based on semesters for lessons 
+Seperation based on semesters for lessons
 
 Assignment to a professor for a lesson (One professor can be assigned to multiple lessons, One lesson assigned to one professor)
 
@@ -35,4 +33,8 @@ Page for registing new lessons for a student
 
 Result Page for total lessons completed and degrees
 
-User has the ability to download  an xml file with the results of his lessons completed and degrees
+User has the ability to download an xml file with the results of his lessons completed and degrees
+
+- You can connect to the page as an admin using
+  user:admin@eap.gr
+  pass:admin1234
